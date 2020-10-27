@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Menu/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/starswithred.png" type="Texture" id=2]
+[ext_resource path="res://Assets/logo2.png" type="Texture" id=3]
+[ext_resource path="res://Audio/SpaceJumper.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Audio/AudioStreamPlayer.gd" type="Script" id=5]
+[ext_resource path="res://Assets/block.png" type="Texture" id=6]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 521.282, 262.9 )
+scale = Vector2( 20, 20 )
+texture = ExtResource( 2 )
+
+[node name="block" type="Sprite" parent="Sprite"]
+position = Vector2( -21.0028, -5.61389 )
+scale = Vector2( 7.20606, 3.986 )
+texture = ExtResource( 6 )
+
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 512.357, 298.346 )
+scale = Vector2( 3.5, 3 )
+texture = ExtResource( 3 )
+
+[node name="Play" type="Button" parent="."]
+margin_left = 500.0
+margin_top = 450.0
+margin_right = 538.0
+margin_bottom = 470.0
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="."]
+margin_left = 500.0
+margin_top = 500.0
+margin_right = 540.0
+margin_bottom = 520.0
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -5.5
+script = ExtResource( 5 )
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
