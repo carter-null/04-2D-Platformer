@@ -21,6 +21,8 @@ export var max_leap = 1000
 var moving = false
 var is_jumping = false
 
+onready var Backup = get_node("/root/Game/Camera")
+
 
 func _ready():
 	pass
@@ -56,4 +58,31 @@ func set_animation(anim):
 	else: $AnimatedSprite.play()
 
 func die():
+	Backup.current = true
 	queue_free()
+	
+
+
+
+
+
+
+
+func _on_Save_pressed():
+	pass # Replace with function body.
+
+
+func _on_Area2D_area_entered(body):
+	if body.name == "Enemy":
+		die()
+	else:
+		pass
+
+
+
+
+func _on_Area2D_body_entered(body):
+	if body.name == "Enemy":
+		die()
+	else:
+		pass

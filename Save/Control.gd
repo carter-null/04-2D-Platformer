@@ -14,10 +14,8 @@ func _on_Save_pressed():
 		, "player_location.x" : 0
 		, "player_location.y" : 0
 	}
-	var bat = get_node("/root/Game/Enemy_Container/Enemy")
+
 	var player = get_node("/root/Game/Player_Container/Player")
-	save_data["bat_location.x"] = bat.position.x
-	save_data["bat_location.y"] = bat.position.y
 	save_data["player_location.x"] = player.position.x
 	save_data["player_location.y"] = player.position.y
 	var file = File.new()
@@ -37,10 +35,7 @@ func _on_Load_pressed():
 		if error == OK:
 			var save_data = file.get_var()
 			file.close()
-			var bat = get_node("/root/Game/Enemy_Container/Enemy")
 			var player = get_node("/root/Game/Player_Container/Player")
-			bat.position.x = save_data["bat_location.x"]
-			bat.position.y = save_data["bat_location.y"]
 			player.position.x = save_data["player_location.x"]
 			player.position.y = save_data["player_location.y"]
 			

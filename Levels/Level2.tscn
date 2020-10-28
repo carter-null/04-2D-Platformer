@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Assets/plantboylevel2.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://Audio/AudioStreamPlayer.gd" type="Script" id=15]
 [ext_resource path="res://Assets/awfulbluebubbler.png" type="Texture" id=16]
 [ext_resource path="res://Assets/stars1.png" type="Texture" id=17]
+[ext_resource path="res://Save/Control.gd" type="Script" id=18]
+[ext_resource path="res://Assets/totem.png" type="Texture" id=19]
 
 [sub_resource type="TileSet" id=1]
 0/name = "starswithblue.png 0"
@@ -48,7 +50,7 @@
 1/shapes = [  ]
 1/z_index = 0
 
-[sub_resource type="CircleShape2D" id=15]
+[sub_resource type="CircleShape2D" id=2]
 radius = 31.5466
 
 [sub_resource type="SpriteFrames" id=3]
@@ -200,7 +202,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 2/shapes = [  ]
 2/z_index = 0
 
-[sub_resource type="CircleShape2D" id=14]
+[sub_resource type="CircleShape2D" id=10]
 radius = 31.6745
 
 [sub_resource type="SpriteFrames" id=11]
@@ -265,26 +267,27 @@ limit_bottom = 600
 [node name="Enemy_Container2" type="Node2D" parent="."]
 position = Vector2( 132, 210 )
 
-[node name="Enemy2" type="KinematicBody2D" parent="Enemy_Container2"]
+[node name="Tomothy" type="KinematicBody2D" parent="Enemy_Container2"]
 script = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Container2/Enemy2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Container2/Tomothy"]
 position = Vector2( 1.96118, 3.24268 )
-shape = SubResource( 15 )
+shape = SubResource( 2 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy_Container2/Enemy2"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy_Container2/Tomothy"]
 position = Vector2( 0, 0.590454 )
 frames = SubResource( 3 )
+frame = 1
 playing = true
 
-[node name="RayCast2D" type="RayCast2D" parent="Enemy_Container2/Enemy2"]
+[node name="RayCast2D" type="RayCast2D" parent="Enemy_Container2/Tomothy"]
 enabled = true
 
 [node name="Platform" type="TileMap" parent="."]
 tile_set = SubResource( 8 )
 collision_friction = 0.0
 format = 1
-tile_data = PoolIntArray( -196584, 3, 0, -196583, 3, 0, -196582, 3, 0, -196581, 3, 0, -196580, 3, 0, -131048, 3, 0, -131044, 3, 0, -65512, 3, 0, -65508, 3, 0, 196639, 3, 0, 262145, 3, 0, 262146, 3, 0, 262172, 3, 0, 262183, 3, 0, 327704, 3, 0, 327705, 3, 0, 327723, 3, 0, 393231, 3, 0, 393235, 3, 0, 393236, 3, 0, 393251, 3, 0, 393252, 3, 0, 393263, 3, 0, 393264, 3, 0, 393296, 3, 0, 393301, 3, 0, 393305, 3, 0, 458828, 3, 0, 458844, 3, 0, 458845, 3, 0, 458846, 3, 0, 458858, 3, 0, 524289, 3, 0, 524290, 3, 0, 524291, 3, 0, 524292, 3, 0, 524293, 3, 0, 524294, 3, 0, 524295, 3, 0, 524296, 3, 0, 524297, 3, 0, 524298, 3, 0, 524299, 3, 0, 524300, 3, 0, 524332, 3, 0, 524354, 3, 0, 524355, 3, 0, 524370, 3, 0, 524387, 3, 0, 524388, 3, 0, 524394, 3, 0, 589825, 3, 0, 589836, 3, 0, 589852, 3, 0, 589853, 3, 0, 589896, 3, 0, 589897, 3, 0, 655361, 3, 0, 655372, 3, 0, 655401, 3, 0, 655414, 3, 0, 655415, 3, 0, 655416, 3, 0, 655417, 3, 0, 655418, 3, 0, 655419, 3, 0, 655420, 3, 0, 655421, 3, 0, 655422, 3, 0, 655423, 3, 0, 655424, 3, 0, 655482, 3, 0, 720897, 3, 0, 720908, 3, 0, 720909, 3, 0, 720929, 3, 0, 720933, 3, 0, 720951, 3, 0, 720960, 3, 0, 720962, 3, 0, 721002, 3, 0, 721017, 3, 0, 721018, 3, 0, 786433, 3, 0, 786444, 3, 0, 786449, 3, 0, 786487, 3, 0, 786496, 3, 0, 786562, 3, 0, 786563, 3, 0, 786564, 3, 0, 786565, 3, 0, 786566, 3, 0, 786567, 3, 0, 786568, 3, 0, 786569, 3, 0, 786570, 3, 0, 851969, 3, 0, 851980, 3, 0, 851989, 3, 0, 851993, 3, 0, 851995, 3, 0, 851996, 3, 0, 851997, 3, 0, 852023, 2, 0, 852032, 3, 0, 852036, 3, 0, 852052, 3, 0, 852056, 3, 0, 852060, 3, 0, 852061, 3, 0, 852062, 3, 0, 852068, 3, 0, 852069, 3, 0, 852071, 3, 0, 852072, 3, 0, 852074, 3, 0, 852075, 3, 0, 852076, 3, 0, 852077, 3, 0, 852078, 3, 0, 852079, 3, 0, 852080, 3, 0, 852086, 3, 0, 852095, 3, 0, 852096, 3, 0, 852098, 3, 0, 852106, 3, 0, 917505, 3, 0, 917516, 3, 0, 917559, 3, 0, 917568, 3, 0, 917587, 3, 0, 917588, 3, 0, 917603, 3, 0, 917604, 3, 0, 917634, 3, 0, 917642, 3, 0, 983041, 3, 0, 983052, 3, 0, 983095, 3, 0, 983104, 3, 0, 983155, 3, 0, 983170, 3, 0, 983178, 3, 0, 1048577, 3, 0, 1048588, 3, 0, 1048631, 3, 0, 1048640, 3, 0, 1048647, 3, 0, 1048655, 3, 0, 1048706, 3, 0, 1048714, 3, 0, 1114113, 3, 0, 1114124, 3, 0, 1114167, 3, 0, 1114176, 3, 0, 1114187, 3, 0, 1114242, 3, 0, 1114250, 3, 0, 1179649, 3, 0, 1179660, 3, 0, 1179703, 3, 0, 1179712, 3, 0, 1179778, 3, 0, 1179786, 3, 0, 1245185, 3, 0, 1245196, 3, 0, 1245239, 3, 0, 1245248, 3, 0, 1245314, 3, 0, 1245322, 3, 0, 1310721, 3, 0, 1310732, 3, 0, 1310775, 3, 0, 1310784, 3, 0, 1310850, 3, 0, 1310858, 3, 0, 1376257, 3, 0, 1376268, 3, 0, 1376311, 3, 0, 1376320, 3, 0, 1376386, 3, 0, 1376394, 3, 0 )
+tile_data = PoolIntArray( -131017, 3, 0, -131011, 3, 0, -65481, 3, 0, -65475, 3, 0, 55, 3, 0, 56, 3, 0, 60, 3, 0, 61, 3, 0, 196608, 3, 0, 196639, 3, 0, 262144, 3, 0, 262145, 3, 0, 262146, 3, 0, 262147, 3, 0, 262148, 3, 0, 262172, 3, 0, 262183, 3, 0, 327704, 3, 0, 327705, 3, 0, 327723, 3, 0, 393231, 3, 0, 393235, 3, 0, 393236, 3, 0, 393251, 3, 0, 393252, 3, 0, 393263, 3, 0, 393264, 3, 0, 393296, 3, 0, 393301, 3, 0, 393305, 3, 0, 458828, 3, 0, 458844, 3, 0, 458845, 3, 0, 458846, 3, 0, 458858, 3, 0, 524289, 3, 0, 524290, 3, 0, 524291, 3, 0, 524292, 3, 0, 524293, 3, 0, 524294, 3, 0, 524295, 3, 0, 524296, 3, 0, 524297, 3, 0, 524298, 3, 0, 524299, 3, 0, 524300, 3, 0, 524332, 3, 0, 524354, 3, 0, 524355, 3, 0, 524370, 3, 0, 524387, 3, 0, 524388, 3, 0, 524394, 3, 0, 589825, 3, 0, 589852, 3, 0, 589853, 3, 0, 589896, 3, 0, 589897, 3, 0, 655361, 3, 0, 655401, 3, 0, 655414, 3, 0, 655415, 3, 0, 655416, 3, 0, 655417, 3, 0, 655418, 3, 0, 655419, 3, 0, 655420, 3, 0, 655421, 3, 0, 655422, 3, 0, 655423, 3, 0, 655424, 3, 0, 655482, 3, 0, 720897, 3, 0, 720908, 3, 0, 720909, 3, 0, 720929, 3, 0, 720933, 3, 0, 720951, 3, 0, 720960, 3, 0, 720962, 3, 0, 721002, 3, 0, 721017, 3, 0, 721018, 3, 0, 786433, 3, 0, 786444, 3, 0, 786449, 3, 0, 786487, 3, 0, 786496, 3, 0, 786562, 3, 0, 786563, 3, 0, 786564, 3, 0, 786565, 3, 0, 786566, 3, 0, 786567, 3, 0, 786568, 3, 0, 786569, 3, 0, 786570, 3, 0, 851969, 3, 0, 851980, 3, 0, 851989, 3, 0, 851993, 3, 0, 851995, 3, 0, 851996, 3, 0, 851997, 3, 0, 852023, 2, 0, 852032, 3, 0, 852036, 3, 0, 852052, 3, 0, 852056, 3, 0, 852060, 3, 0, 852061, 3, 0, 852062, 3, 0, 852068, 3, 0, 852069, 3, 0, 852071, 3, 0, 852072, 3, 0, 852074, 3, 0, 852075, 3, 0, 852076, 3, 0, 852077, 3, 0, 852078, 3, 0, 852079, 3, 0, 852080, 3, 0, 852086, 3, 0, 852095, 3, 0, 852096, 3, 0, 852098, 3, 0, 852106, 3, 0, 917505, 3, 0, 917516, 3, 0, 917559, 3, 0, 917568, 3, 0, 917587, 3, 0, 917588, 3, 0, 917603, 3, 0, 917604, 3, 0, 917634, 3, 0, 917642, 3, 0, 983041, 3, 0, 983052, 3, 0, 983095, 3, 0, 983104, 3, 0, 983155, 3, 0, 983170, 3, 0, 983178, 3, 0, 1048577, 3, 0, 1048588, 3, 0, 1048631, 3, 0, 1048640, 3, 0, 1048647, 3, 0, 1048655, 3, 0, 1048706, 3, 0, 1048714, 3, 0, 1114113, 3, 0, 1114124, 3, 0, 1114167, 3, 0, 1114176, 3, 0, 1114187, 3, 0, 1114242, 3, 0, 1114250, 3, 0, 1179649, 3, 0, 1179660, 3, 0, 1179703, 3, 0, 1179712, 3, 0, 1179778, 3, 0, 1179786, 3, 0, 1245185, 3, 0, 1245196, 3, 0, 1245239, 3, 0, 1245248, 3, 0, 1245314, 3, 0, 1245322, 3, 0, 1310721, 3, 0, 1310732, 3, 0, 1310775, 3, 0, 1310784, 3, 0, 1310850, 3, 0, 1310858, 3, 0, 1376257, 3, 0, 1376268, 3, 0, 1376311, 3, 0, 1376320, 3, 0, 1376386, 3, 0, 1376394, 3, 0 )
 
 [node name="Foreground" type="TileMap" parent="."]
 tile_set = SubResource( 9 )
@@ -301,22 +304,23 @@ limit_right = 9500
 limit_bottom = 1300
 
 [node name="Enemy_Container" type="Node2D" parent="."]
-position = Vector2( 1637.29, -124.724 )
+position = Vector2( 3621.76, -96.5648 )
 
-[node name="Enemy" type="KinematicBody2D" parent="Enemy_Container"]
+[node name="Tim" type="KinematicBody2D" parent="Enemy_Container"]
 position = Vector2( -2.43365, 13 )
 script = ExtResource( 10 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Container/Enemy"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Container/Tim"]
 position = Vector2( 3.43365, 27 )
-shape = SubResource( 14 )
+shape = SubResource( 10 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy_Container/Enemy"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy_Container/Tim"]
 position = Vector2( 1.54532, 23.9735 )
 frames = SubResource( 11 )
+frame = 1
 playing = true
 
-[node name="RayCast2D" type="RayCast2D" parent="Enemy_Container/Enemy"]
+[node name="RayCast2D" type="RayCast2D" parent="Enemy_Container/Tim"]
 position = Vector2( 2.00708, 27 )
 enabled = true
 
@@ -506,4 +510,80 @@ speed_scale = 4.0
 randomness = 1.0
 process_material = SubResource( 12 )
 texture = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 735.574, 464.688 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 19 )
+
+[node name="HUD" type="Control" parent="Sprite"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save" type="Button" parent="Sprite/HUD"]
+anchor_right = 0.725
+margin_left = -11.1045
+margin_top = -2.93137
+margin_right = 0.895493
+margin_bottom = 17.0686
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Set"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Load" type="Button" parent="Sprite/HUD"]
+margin_left = -16.7651
+margin_top = 11.7319
+margin_right = 48.2349
+margin_bottom = 31.7319
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Teleport"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 3999.59, 592.001 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 19 )
+
+[node name="HUD" type="Control" parent="Sprite2"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save" type="Button" parent="Sprite2/HUD"]
+anchor_right = 0.725
+margin_left = -11.1045
+margin_top = -2.93137
+margin_right = 0.895493
+margin_bottom = 17.0686
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Set"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Load" type="Button" parent="Sprite2/HUD"]
+margin_left = -17.0427
+margin_top = 12.2197
+margin_right = 47.9573
+margin_bottom = 32.2197
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Teleport"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="Exit_to_3" to="Exit_to_3" method="_on_Exit_body_entered"]
+[connection signal="pressed" from="Sprite/HUD/Save" to="Sprite/HUD" method="_on_Save_pressed"]
+[connection signal="pressed" from="Sprite/HUD/Load" to="Sprite/HUD" method="_on_Load_pressed"]
+[connection signal="pressed" from="Sprite2/HUD/Save" to="Sprite2/HUD" method="_on_Save_pressed"]
+[connection signal="pressed" from="Sprite2/HUD/Load" to="Sprite2/HUD" method="_on_Load_pressed"]

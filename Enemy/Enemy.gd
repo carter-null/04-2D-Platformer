@@ -2,8 +2,8 @@ extends KinematicBody2D
 
 var player = null
 onready var ray = $RayCast2D
-export var speed = 225
-export var looking_speed = 190
+export var speed = 170
+export var looking_speed = 155
 	
 func _physics_process(_delta):
 	if player == null:
@@ -18,4 +18,9 @@ func _physics_process(_delta):
 			move_and_slide(velocity, Vector2(0,0))
 
 
+func die():
+	queue_free()
 
+
+func _on_Area2D_area_entered(area):
+	die()
