@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Audio/AudioStreamPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://Enemy/Birdy.gd" type="Script" id=14]
 [ext_resource path="res://Assets/bird2.png" type="Texture" id=15]
 [ext_resource path="res://Assets/bird.png" type="Texture" id=16]
+[ext_resource path="res://Assets/totem.png" type="Texture" id=17]
+[ext_resource path="res://Save/Control.gd" type="Script" id=18]
 
 [sub_resource type="TileSet" id=1]
 0/name = "stars.png 0"
@@ -427,7 +429,6 @@ script = ExtResource( 14 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy_Container/Enemy"]
 position = Vector2( -0.918274, 5.36768 )
 frames = SubResource( 7 )
-frame = 1
 speed_scale = 0.5
 playing = true
 
@@ -443,4 +444,87 @@ stream = ExtResource( 3 )
 volume_db = -5.5
 autoplay = true
 script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 3328.75, 524.599 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 17 )
+
+[node name="Control" type="Control" parent="Sprite"]
+anchor_left = 0.5
+anchor_top = 0.409
+anchor_right = 0.5
+anchor_bottom = 0.409
+margin_left = -51.9065
+margin_top = -36.7912
+margin_right = -11.9065
+margin_bottom = 3.2088
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save" type="Button" parent="Sprite/Control"]
+margin_left = 9.5647
+margin_top = 7.96454
+margin_right = 50.5647
+margin_bottom = 27.9645
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Load" type="Button" parent="Sprite/Control"]
+margin_left = 9.5647
+margin_top = 21.0466
+margin_right = 51.5647
+margin_bottom = 41.0466
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Load"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 90.209, 463.599 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 17 )
+
+[node name="Control" type="Control" parent="Sprite2"]
+anchor_left = 0.5
+anchor_top = 0.409
+anchor_right = 0.5
+anchor_bottom = 0.409
+margin_left = -51.9065
+margin_top = -36.7912
+margin_right = -11.9065
+margin_bottom = 3.2088
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save" type="Button" parent="Sprite2/Control"]
+margin_left = 9.5647
+margin_top = 7.96454
+margin_right = 50.5647
+margin_bottom = 27.9645
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Load" type="Button" parent="Sprite2/Control"]
+margin_left = 9.5647
+margin_top = 21.0466
+margin_right = 51.5647
+margin_bottom = 41.0466
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Load"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="Exit_to_2" to="Exit_to_2" method="_on_Exit_body_entered"]
+[connection signal="pressed" from="Sprite/Control/Save" to="Sprite/Control" method="_on_Save_pressed"]
+[connection signal="pressed" from="Sprite/Control/Load" to="Sprite/Control" method="_on_Load_pressed"]
