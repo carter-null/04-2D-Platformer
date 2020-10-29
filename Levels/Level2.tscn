@@ -262,7 +262,7 @@ texture = ExtResource( 3 )
 script = ExtResource( 6 )
 
 [node name="Exit_to_3" type="Area2D" parent="."]
-position = Vector2( 5140.24, 165.123 )
+position = Vector2( 5140.24, 164.983 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
@@ -275,7 +275,7 @@ texture = ExtResource( 3 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exit_to_3"]
 position = Vector2( 3643.56, 493.357 )
-polygon = PoolVector2Array( 12, -48.7, 23, -35.7, 23, -32.4, 25, -27.9, 25, 27.1, 22.6, 37, 21, 37, 11.5, 50, -11.6, 50, -23, 35.7, -23, 32.4, -25, 27.9, -25, -26.1, -19.4, -42, -17.8, -42, -10, -49.8, 12, -50 )
+polygon = PoolVector2Array( 5.41992, -26.6149, 12.9443, -25.193, 21.3652, -19.2715, 26.1406, -4.94531, 26.2871, 7.0249, 21.4707, 16.0239, 15.3154, 22.3911, 6.25488, 26.4056, -5.07715, 26.0952, -15.7979, 20.9103, -23.4043, 11.5964, -27.2852, -0.666992, -26.5635, -9.97791, -23.4863, -15.8145, -18.2334, -20.1638, -12.4082, -23.8558, -3.91895, -26.9332 )
 
 [node name="Player_Container" type="Node2D" parent="."]
 script = ExtResource( 2 )
@@ -347,10 +347,12 @@ position = Vector2( 2.00708, 27 )
 enabled = true
 
 [node name="Enemy_Container3" type="Node2D" parent="."]
-position = Vector2( 4005.76, -96.5648 )
+position = Vector2( 3997.76, -72.5648 )
+scale = Vector2( 0.333, 0.333 )
 
 [node name="Enemy" type="KinematicBody2D" parent="Enemy_Container3"]
 position = Vector2( -2.43365, 13 )
+scale = Vector2( 2, 2 )
 script = ExtResource( 19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Container3/Enemy"]
@@ -359,7 +361,6 @@ shape = SubResource( 10 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy_Container3/Enemy"]
 position = Vector2( 1.54532, 23.9735 )
-scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 11 )
 animation = "lovebird"
 playing = true
@@ -370,7 +371,7 @@ enabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
-volume_db = -5.5
+volume_db = -10.0
 pitch_scale = 1.15
 autoplay = true
 script = ExtResource( 15 )
@@ -559,7 +560,7 @@ texture = ExtResource( 3 )
 position = Vector2( 477.643, 436.926 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 13 )
-frame = 1
+frame = 7
 playing = true
 
 [node name="HUD" type="Control" parent="AnimatedSprite"]
@@ -598,6 +599,7 @@ __meta__ = {
 position = Vector2( 3998.64, 564.926 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 13 )
+frame = 6
 playing = true
 
 [node name="HUD" type="Control" parent="AnimatedSprite2"]

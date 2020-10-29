@@ -193,7 +193,7 @@ texture = ExtResource( 13 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exit_to_2"]
 position = Vector2( 3643.56, 493.357 )
-polygon = PoolVector2Array( 12, -48.7, 23, -35.7, 23, -32.4, 25, -27.9, 25, 27.1, 22.6, 37, 21, 37, 11.5, 50, -11.6, 50, -23, 35.7, -23, 32.4, -25, 27.9, -25, -26.1, -19.4, -42, -17.8, -42, -10, -49.8, 12, -50 )
+polygon = PoolVector2Array( 6.05273, -26.7696, 15.4082, -24.3227, 22.3774, -15.3125, 26.8394, -5.09332, 26.2637, 4.83807, 22.999, 14.9232, 15.7959, 21.6851, 5.31836, 25.7206, -4.52197, 25.5781, -15.0464, 21.8243, -24.7188, 9.83582, -27.7158, -0.926575, -25.8164, -8.2597, -21.959, -15.111, -15.7695, -20.8682, -11.0752, -24.7545, -3.73486, -26.4817 )
 
 [node name="Player_Container" type="Node2D" parent="."]
 script = ExtResource( 2 )
@@ -458,7 +458,7 @@ enabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -5.5
+volume_db = -10.0
 autoplay = true
 script = ExtResource( 1 )
 
@@ -466,7 +466,7 @@ script = ExtResource( 1 )
 position = Vector2( 99.248, 436.611 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 9 )
-frame = 5
+frame = 6
 playing = true
 
 [node name="HUD" type="Control" parent="AnimatedSprite"]
@@ -509,7 +509,7 @@ __meta__ = {
 position = Vector2( 3552.25, 501.611 )
 scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 9 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="HUD" type="Control" parent="AnimatedSprite2"]
