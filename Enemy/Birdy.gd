@@ -2,8 +2,8 @@ extends KinematicBody2D
 
 var player = null
 onready var ray = $RayCast2D
-export var speed = 225
-export var looking_speed = 190
+export var speed = 160
+export var looking_speed = 130
 	
 func _physics_process(_delta):
 	if player == null:
